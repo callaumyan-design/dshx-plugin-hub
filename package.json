@@ -1,0 +1,40 @@
+{
+  "name": "dshx-plugin-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Moves the dshmarket plugin market into Settings → 内置插件 as a tab, beside the host's plugin list and the market's own settings card.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis"
+  ],
+  "author": "callaumyan-design",
+  "license": "MIT",
+  "homepage": "https://github.com/callaumyan-design/dshx-plugin-hub#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callaumyan-design/dshx-plugin-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/callaumyan-design/dshx-plugin-hub/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}
